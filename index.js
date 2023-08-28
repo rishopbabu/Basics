@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import ToggleSwitchComponent from './Components/ToggleSwitchComponent';
+import DisplayAnImageWithStyle from './Props/ImageStyleProps';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => ToggleSwitchComponent);
+AppRegistry.registerComponent(appName, () => DisplayAnImageWithStyle);
