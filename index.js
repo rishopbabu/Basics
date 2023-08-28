@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import Modal from './ModalComponent';
+import ActivityIndicator from './ActivityIndicatorComponent';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Modal);
+AppRegistry.registerComponent(appName, () => ActivityIndicator);
