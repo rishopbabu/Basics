@@ -19,7 +19,7 @@ const App = () => {
           <Text>Hi this is my first {name}</Text>
           <Image source={require('./assets/emoji1.png')} style= {{width: 250, height: 250}}></Image>
         </View>
-        <TextInput style= {{height: 40, borderBlockColor: 'gray', borderWidth: 0.5}} defaultValue='Type here'></TextInput>
+        <TextInput style= {{height: 40, borderBlockColor: 'gray', borderWidth: 0.5}} placeholder='Type here'></TextInput>
       </ScrollView>
     </SafeAreaView>
   );
