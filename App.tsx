@@ -15,7 +15,7 @@ type AppProps = {
 // Multiple Components
 const AppName = (props: AppProps) => {
   return(
-    <View>
+    <View style={{gap: 10}}>
      <Text>Hi this is my {props.name} App</Text>
     </View>
   )
@@ -23,7 +23,7 @@ const AppName = (props: AppProps) => {
 
 const ImageView = () => {
   return(
-      <Image source={require('./assets/emoji1.png')} style= {{width: 100, height: 100}}/>
+      <Image source={require('./assets/emoji1.png')} style= {{width: 100, height: 100, gap: 10}}/>
   )
 }
 
@@ -48,11 +48,11 @@ const ImageChanger = () => {
   }
 
   return(
-    <View>
+    <View style={{gap: 10}}>
+      <Image source={imageSource} style= {{width: 100, height: 100}}/>
      <TouchableOpacity onPress={toggeImage}>
       <Text>Change Image</Text>
      </TouchableOpacity>
-     <Image source={imageSource} style= {{width: 100, height: 100}}></Image>
     </View>
   )
 }
@@ -63,14 +63,15 @@ const App = () => {
   return(
     <SafeAreaView>
       <ScrollView>
-        <View>
-          <Text>Hi this is my {name} App</Text>
+        <View style={{gap: 20}}>
+          <Text style={{gap: 10}}>Hi this is my {name} App</Text>
           <AppName name={'Second RN'}/>
           <AppName name={'Third RN'}/>
-          <Image source={require('./assets/emoji1.png')} style= {{width: 100, height: 100}}></Image>
           <ImageChanger/>
         </View>
-        <TextInput style= {{height: 40, borderBlockColor: 'gray', borderWidth: 0.5}} placeholder='Type here'></TextInput>
+        <View style={{gap: 20}}>
+          <TextInput style= {{height: 40, borderColor: 'gray', borderWidth: 0.5, }} placeholder='Type here'></TextInput>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
