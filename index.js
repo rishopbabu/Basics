@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import KeyboardAvoidingComponent from './KeyboardAvoidingComponent';
+import Modal from './ModalComponent';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => KeyboardAvoidingComponent);
+AppRegistry.registerComponent(appName, () => Modal);
