@@ -18,10 +18,11 @@ const KeyboardAvoidingComponent = () => {
       style={styles.container}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={styles.inner}>
-          <Text style={styles.header}>Header</Text>
-          <TextInput placeholder="Username" style={styles.textInput} />
+          <Text style={styles.header}>Login</Text>
+          <TextInput placeholder='Username' style={styles.textInput} />
+          <TextInput placeholder='Password' secureTextEntry style={styles.textInput}/>
           <View style={styles.btnContainer}>
-            <Button title="Submit" onPress={() => null} />
+          <Button title='Submit' onPress={() => null} />
           </View>
         </View>
       </TouchableWithoutFeedback>
@@ -40,13 +41,13 @@ const styles = StyleSheet.create({
   },
   header: {
     fontSize: 36,
-    marginBottom: 48,
+    marginBottom: 1,
   },
   textInput: {
     height: 40,
     borderColor: '#000000',
     borderBottomWidth: 1,
-    marginBottom: 36,
+    marginBottom: 1,
   },
   btnContainer: {
     backgroundColor: 'white',
