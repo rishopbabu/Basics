@@ -9,7 +9,7 @@ import React, {useState} from 'react';
 import { SafeAreaView, ScrollView, Text, 
   Image, View, TextInput, TouchableOpacity, 
   useWindowDimensions, TouchableHighlight, 
-  FlatList, StatusBar, StyleSheet } from 'react-native';
+  FlatList, StatusBar, StyleSheet, ImageBackground } from 'react-native';
 
 type AppProps = {
   name: String;
@@ -119,6 +119,10 @@ const ImageChanger = () => {
 }
 
 const App = () => {
+
+  // Const image 
+  const image = require('./assets/background-image.png')
+
   // A const value
   const name = 'First RN'
   
@@ -140,21 +144,24 @@ const App = () => {
   return(
     <SafeAreaView style={styles.container}>
       <ScrollView>
+      <ImageBackground source={image} resizeMode='cover' style={styles.backgroundImage}>
         <View style={{gap: 20}}>
-          <Text style={{gap: 10}}>Hi this is my {name} App</Text>
-          <AppName name={'Second RN'}/>
-          <AppName name={'Third RN'}/>
-          <ImageChanger/>
-          <TextInput style= {{height: 40, borderColor: 'gray', borderWidth: 0.5, }} placeholder='Type here'></TextInput>
-          <FlatList 
-            data={DATA} 
-            renderItem={renderItem}
-            //keyExtractor={item => item.id}
-            //extraData={item => item.selectedId} 
+            <Text style={{gap: 10}}>Hi this is my {name} App</Text>
+            <AppName name={'Second RN'}/>
+            <AppName name={'Third RN'}/>
+            <ImageChanger/>
+            <TextInput style= {{height: 40, borderColor: 'gray', borderWidth: 0.5, }} placeholder='Type here'></TextInput>
+            <FlatList 
+              data={DATA} 
+              renderItem={renderItem}
+              //keyExtractor={item => item.id}
+              //extraData={item => item.selectedId} 
             >
-          </FlatList>
+            </FlatList>
+         
           
-        </View>
+           </View>
+        </ImageBackground>
         
       </ScrollView>
       
@@ -176,6 +183,10 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 32,
+  },
+  backgroundImage: {
+    flex: 1,
+    justifyContent: 'center',
   },
 });
 
