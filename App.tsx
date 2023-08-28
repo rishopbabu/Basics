@@ -20,13 +20,6 @@ type ItemData = {
   title: string
 };
 
-type ItemProps = {
-  item: ItemData;
-  onPress: () => void;
-  backgroundColor: string;
-  textColor: string;
-};
-
 //List data
 const DATA: ItemData[]= [
   {
@@ -55,9 +48,24 @@ const DATA: ItemData[]= [
   },
 ]
 
+// for selected list
+type ItemProps = {
+  item: ItemData;
+  onPress: () => void;
+  backgroundColor: string;
+  textColor: string;
+}
+
+//Selected list item
+const Item = ({item, onPress, backgroundColor, textColor}: ItemProps) => (
+  <TouchableOpacity onPress={onPress} style={[styles.item, {backgroundColor}]}>
+    <Text style={[styles.title, {color: textColor}]}>{item.title}</Text>
+  </TouchableOpacity>
+)
+
 type itemProps = {title: string}
 
-const Item = ({title}: itemProps) => {
+const ItemSelected = ({title}: itemProps) => {
   return(
     <View style= {styles.item}>
       <Text style= {styles.title}>{title}</Text>
@@ -113,6 +121,22 @@ const ImageChanger = () => {
 const App = () => {
   // A const value
   const name = 'First RN'
+  
+  const [selectedId, setSelectedId] = useState<number>();
+  const renderItem = ({item}: {item: ItemData}) => {
+    const backgroundColor = item.id === selectedId ? '#6e3b6e' : '#f9c2ff';
+    const color = item.id === selectedId ? 'white' : 'black';
+  
+    return (
+      <Item
+        item={item}
+        onPress={() => setSelectedId(item.id)}
+        backgroundColor={backgroundColor}
+        textColor={color}
+      />
+    );
+  }
+
   return(
     <SafeAreaView style={styles.container}>
       <ScrollView>
@@ -124,8 +148,10 @@ const App = () => {
           <TextInput style= {{height: 40, borderColor: 'gray', borderWidth: 0.5, }} placeholder='Type here'></TextInput>
           <FlatList 
             data={DATA} 
-            renderItem={({item}) => <Item title={item.title}></Item>}
-            keyExtractor={item => item.id} >
+            renderItem={renderItem}
+            //keyExtractor={item => item.id}
+            //extraData={item => item.selectedId} 
+            >
           </FlatList>
           
         </View>
