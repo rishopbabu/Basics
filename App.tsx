@@ -9,7 +9,8 @@ import React, {useState} from 'react';
 import { SafeAreaView, ScrollView, Text, 
   Image, View, TextInput, TouchableOpacity, 
   useWindowDimensions, TouchableHighlight, 
-  FlatList, StatusBar, StyleSheet, ImageBackground } from 'react-native';
+  FlatList, StatusBar, StyleSheet, ImageBackground, 
+  KeyboardAvoidingView, Platform, TouchableWithoutFeedback, } from 'react-native';
 
 type AppProps = {
   name: String;
