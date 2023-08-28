@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import StatusBarComponent from './Components/StatusBarComponent';
+import ToggleSwitchComponent from './Components/ToggleSwitchComponent';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => StatusBarComponent);
+AppRegistry.registerComponent(appName, () => ToggleSwitchComponent);
