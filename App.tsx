@@ -8,12 +8,15 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, Text, Image, View, TextInput } from 'react-native';
 
+type AppProps = {
+  name: String;
+}
+
 // Multiple Components
-const AppName = () => {
-  const name = 'RN App'
+const AppName = (props: AppProps) => {
   return(
     <View>
-     <Text>Hi this is my first {name}</Text>
+     <Text>Hi this is my {props.name} App</Text>
     </View>
   )
 }
@@ -26,16 +29,14 @@ const ImageView = () => {
 
 const App = () => {
   // A const value
-  const name = 'RN App'
+  const name = 'First RN'
   return(
     <SafeAreaView>
       <ScrollView>
         <View>
-          <Text>Hi this is my first {name}</Text>
-          <AppName/>
-          <AppName/>
-          <AppName/>
-          <AppName/>
+          <Text>Hi this is my {name} App</Text>
+          <AppName name={'Second RN'}/>
+          <AppName name={'Third RN'}/>
           <Image source={require('./assets/emoji1.png')} style= {{width: 100, height: 100}}></Image>
           <ImageView/>
         </View>
