@@ -6,7 +6,7 @@
  */
 
 import React, {useState} from 'react';
-import { SafeAreaView, ScrollView, Text, Image, View, TextInput, TouchableOpacity, useWindowDimensions } from 'react-native';
+import { SafeAreaView, ScrollView, Text, Image, View, TextInput, TouchableOpacity, useWindowDimensions, TouchableHighlight } from 'react-native';
 
 type AppProps = {
   name: String;
@@ -15,7 +15,7 @@ type AppProps = {
 // Multiple Components
 const AppName = (props: AppProps) => {
   return(
-    <View style={{gap: 10}}>
+    <View>
      <Text>Hi this is my {props.name} App</Text>
     </View>
   )
@@ -48,7 +48,7 @@ const ImageChanger = () => {
   }
 
   return(
-    <View style={{gap: 10}}>
+    <View>
       <Image source={imageSource} style= {{width: 100, height: 100}}/>
      <TouchableOpacity onPress={toggeImage}>
       <Text>Change Image</Text>
@@ -68,10 +68,34 @@ const App = () => {
           <AppName name={'Second RN'}/>
           <AppName name={'Third RN'}/>
           <ImageChanger/>
-        </View>
-        <View style={{gap: 20}}>
           <TextInput style= {{height: 40, borderColor: 'gray', borderWidth: 0.5, }} placeholder='Type here'></TextInput>
         </View>
+
+        <View style={{gap: 20}}>
+          <Text style={{gap: 10}}>Hi this is my {name} App</Text>
+          <AppName name={'Second RN'}/>
+          <AppName name={'Third RN'}/>
+          <ImageChanger/>
+          <TextInput style= {{height: 40, borderColor: 'gray', borderWidth: 0.5, }} placeholder='Type here'></TextInput>
+        </View>
+
+        <View style={{gap: 20}}>
+          <Text style={{gap: 10}}>Hi this is my {name} App</Text>
+          <AppName name={'Second RN'}/>
+          <AppName name={'Third RN'}/>
+          <ImageChanger/>
+          <TextInput style= {{height: 40, borderColor: 'gray', borderWidth: 0.5, }} placeholder='Type here'></TextInput>
+          
+        </View>
+
+        <View style={{gap: 20}}>
+          <Text style={{gap: 10}}>Hi this is my {name} App</Text>
+          <AppName name={'Second RN'}/>
+          <AppName name={'Third RN'}/>
+          <ImageChanger/>
+          <TextInput style= {{height: 40, borderColor: 'gray', borderWidth: 0.5, }} placeholder='Type here'></TextInput>
+        </View>
+
       </ScrollView>
     </SafeAreaView>
   );
