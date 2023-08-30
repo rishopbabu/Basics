@@ -6,11 +6,6 @@
  */
 
 import React, {useState} from 'react';
-import { SafeAreaView, ScrollView, Text, 
-  Image, View, TextInput, TouchableOpacity, 
-  useWindowDimensions, TouchableHighlight, 
-  FlatList, StatusBar, StyleSheet, ImageBackground, 
-  KeyboardAvoidingView, Platform, TouchableWithoutFeedback, } from 'react-native';
 
 // Import Navigation
 import {NavigationContainer} from '@react-navigation/native'
