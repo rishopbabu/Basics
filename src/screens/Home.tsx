@@ -10,8 +10,7 @@ type HomeScreenProps = NativeStackScreenProps<RootStackParamList, 'Home'>
 function HomeScreen({navigation}: HomeScreenProps) {
     return(
         <View style={styles.container}>
-            <Text style={styles.smallText}>Home Screen</Text>
-            <Button title="Next Page" onPress={() => navigation.navigate('Details', {productID: '01'})}></Button>
+            
         </View>
     )
 }

@@ -23,8 +23,7 @@ import DetailsScreen from './screens/Details'
 
 export type RootStackParamList = {
   Home: undefined
-  Details: { productID: String}
-  Feed: { sort: 'latest' | 'top' } | undefined
+  Details: { productID: Product}
 }
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
@@ -39,7 +38,7 @@ const App = () => {
           name = 'Home'
           component={HomeScreen}
           options={{
-            title: 'Products'
+            title: 'Trending Products'
           }} />
         
         <Stack.Screen

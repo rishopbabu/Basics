@@ -14,10 +14,6 @@ const DetailsScreen = ({route}: DetailsScreenProps) => {
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
     return(
         <View style={styles.container}>
-            <Text style={styles.smallText}>Details: {productID}</Text>
-            <Button title= 'Go to home'
-                    // onPress={() => navigation.navigate('Home')}>
-                    onPress={() => navigation.popToTop()}/>
         </View>
     )
 }
