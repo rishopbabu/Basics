@@ -12,12 +12,12 @@ import Seperator from "../components/Seperator";
 import { PRODUCTS_LIST } from "../data/constants";
 
 
-type HomeScreenProps = NativeStackScreenProps<RootStackParamList, 'Home'> 
+type HomeScreenProps = NativeStackScreenProps<RootStackParamList>
 
 function HomeScreen({navigation}: HomeScreenProps) {
     return (
         <View style={styles.container}>
-            <FlatList
+            {/* <FlatList
             data={PRODUCTS_LIST}
             keyExtractor={item => item.id}
             ItemSeparatorComponent={Seperator}
@@ -31,7 +31,11 @@ function HomeScreen({navigation}: HomeScreenProps) {
             <ProductItem product={item}/>
             </Pressable>
             )}
-            />
+            /> */}
+            <Text>Home Screen</Text>
+            <Button
+        title="Go to Search"
+        onPress={() => navigation.navigate('Search')} />
         </View>
     )
 }

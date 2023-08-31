@@ -14,14 +14,17 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack'
 //Import screens
 import HomeScreen from './screens/Home'
 import DetailsScreen from './screens/Details'
+import SearchScreen from './screens/Search';
+import { View } from 'react-native';
 
 
 export type RootStackParamList = {
   Home: undefined
   Details: { product: Product}
+  Search: undefined
 }
 
-const Stack = createNativeStackNavigator<RootStackParamList>()
+const Stack = createNativeStackNavigator()
 
 const App = () => {
   return(
@@ -29,7 +32,7 @@ const App = () => {
     
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen 
+        {/* <Stack.Screen 
           name = 'Home'
           component={HomeScreen}
           options={{
@@ -41,9 +44,28 @@ const App = () => {
           component={DetailsScreen}
           options={{
             title: 'Products Details'
-          }} />
+          }} /> */}
+
+        <Stack.Group
+          screenOptions={{ headerStyle: { backgroundColor: 'papayawhip' } }}
+        >
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Details" component={EmptyScreen} />
+        </Stack.Group>
+
+        <Stack.Group screenOptions={{ presentation: 'modal' }}>
+          <Stack.Screen name='Search' component={SearchScreen} />
+          <Stack.Screen name="Share" component={EmptyScreen} />
+        </Stack.Group>
+        
       </Stack.Navigator>
     </NavigationContainer>
+  )
+}
+
+const EmptyScreen = () => {
+  return(
+    <View></View>
   )
 }
 
