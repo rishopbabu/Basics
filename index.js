@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import LayoutAnimationApp from './Animation/LayoutAnimation';
+import NetworkingApp from './Networking/Networking';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => LayoutAnimationApp);
+AppRegistry.registerComponent(appName, () => NetworkingApp);
