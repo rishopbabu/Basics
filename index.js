@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import ScrollViewAnimation from './Animation/ScrollViewWithAnimated';
+import PanResponderAnimation from './Animation/PanResponder';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => ScrollViewAnimation);
+AppRegistry.registerComponent(appName, () => PanResponderAnimation);
