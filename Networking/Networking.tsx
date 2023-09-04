@@ -5,7 +5,7 @@ type Movie = {
     id: string
     title: string
     releaseYear: string
-};
+}
 
 const NetworkingApp = () => {
     const [isLoading, setLoading] = useState(true);
