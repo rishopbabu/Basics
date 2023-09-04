@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import PanResponderAnimation from './Animation/PanResponder';
+import LayoutAnimationApp from './Animation/LayoutAnimation';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => PanResponderAnimation);
+AppRegistry.registerComponent(appName, () => LayoutAnimationApp);
