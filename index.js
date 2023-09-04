@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import FadeView from './Animation/FadingAnimation';
+import ScrollViewAnimation from './Animation/ScrollViewWithAnimated';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => FadeView);
+AppRegistry.registerComponent(appName, () => ScrollViewAnimation);
